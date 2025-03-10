@@ -20,9 +20,10 @@ class MobileNavbar {
 
   handleClick() {
     this.navList.classList.toggle(this.activeClass);
-    this.mobileMenu.classList.toggle(this.activeClass);
-    this.animateLinks();
-    this.navList.classList.add("active"); // Adicione essa linha
+    this.navLinks.forEach((link) => {
+      link.classList.toggle(this.activeClass);
+    });
+    this.mobileMenu.classList.toggle("active");
   }
 }
 
