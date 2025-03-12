@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="./CSS/global.css" />
 
     <style>
+      * {
+        font-family: sans-serif;
+      }
       .container {
         display: flex;
         justify-content: space-between;
@@ -26,6 +29,24 @@
         display: none;
         cursor: pointer;
       }
+      .botao {
+        width: 80px;
+        border-radius: 30px;
+        border: none;
+        padding-left: 20px;
+        height: 30px;
+        background-color: rgba(41, 93, 128, 0.623);
+        font-family: sans-serif;
+      }
+      .botao:hover {
+        background-color: rgb(108, 132, 209);
+      }
+      main {
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        gap: 10px;
+      }
     </style>
   </head>
   <body>
@@ -35,7 +56,7 @@
           <h1>XS</h1>
         </div>
         <div class="search">
-          <input type="search" placeholder="Pesquisar" />
+          <input class="Pesquisar" type="search" placeholder="Pesquisar" />
         </div>
         <div class="header">
           <span
@@ -57,7 +78,15 @@
     </header>
     <main>
       <textarea name="twitterText" id="twitterText"></textarea>
-      <input type="submit" value="Tweet" id="tweetButton" />
+      <input
+        class="botao"
+        type="submit"
+        value="Tweet"
+        id="tweetButton"
+        disabled
+      />
+      <span id="twitterCounter">140</span>
+
       <ul id="tweetList"></ul>
     </main>
     <script type="text/javascript" src="./JS/criarpost.js"></script>

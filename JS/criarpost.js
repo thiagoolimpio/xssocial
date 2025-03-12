@@ -1,6 +1,9 @@
+const MAX_LENGTH = 140;
+
 var twitterText = document.querySelector("#twitterText");
 var tweetButton = document.querySelector("#tweetButton");
 var tweetList = document.querySelector("#tweetList");
+var twitterCounter = document.querySelector("#twitterCounter");
 
 tweetButton.addEventListener("click", addTweet);
 
@@ -9,4 +12,14 @@ function addTweet(event) {
   newLi.textContent = twitterText.value;
   tweetList.appendChild(newLi);
   twitterText.value = "";
+}
+twitterText.addEventListener("keyup", changeCounter);
+function changeCounter(event) {
+  var counterValue = MAX_LENGTH - twitterText.value.length;
+  twitterCounter.textContent = counterValue;
+  if (counterValue === MAX_LENGTH) {
+    tweetButton.setAttribute("disabled", "");
+  } else {
+    tweetButton.removeAttribute("disabled");
+  }
 }
